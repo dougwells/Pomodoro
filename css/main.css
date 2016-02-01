@@ -1,0 +1,145 @@
+/*
+    Doug Wells's Calculator project
+    See if you can find the "easter egg"
+    Finding it is as easy as PI
+*/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+  /*background: url('https://dl.dropboxusercontent.com/s/ve1o0rvptdf8gnq/track.jpg') no-repeat center center fixed;*/
+background-color: red; /* Fall back if browser does not support linear-gradient */
+/* these will reset other properties, like background-position, but it does know what you mean */
+background: red;
+background: no-repeat center center fixed
+  linear-gradient(
+    to bottom right,
+    #f06d06, #ED4337);
+
+width: 100%;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  overflow: hidden;
+}
+
+.positionRel {
+  position: relative;
+}
+
+.positionAb {
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+
+}
+
+.semi-transparent-button {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 8px;
+  width: 80%;
+  max-width: 200px;
+  background: #fff;
+  /* fallback color for old browsers */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+}
+.semi-transparent-button:hover,
+.semi-transparent-button:focus,
+.semi-transparent-button:active {
+  background: #f4f4f4;
+  color: #26a5d3;
+  transition: all 0.5s ease-in;
+}
+
+.display {
+  margin: 5px 5px 5px 5px;
+  width: 280px;
+  height: 60px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font: bold 45px Arial, Helvetica, sans-serif;
+  color: #333;
+  background-color: rgba(255,255,255, 0.4);
+  color: rgba(0,0,0, 0.6);
+  padding: 3px;
+  text-align: right;
+}
+
+.calc-btn {
+    display: inline-block;
+    color: #fff;
+    font-family: Sans-serif;
+    font-size: 20px;
+    height: 60px;
+    width: 60px;
+    padding: 20px 0px;
+    line-height: 20px;
+    margin: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease 0s;
+}
+
+.calc-btn:hover,
+.calc-btn:active {
+  background-color: rgba(255,255,255, 0.3);
+  color: #000;
+}
+
+.orange-btn {
+  display: inline-block;
+  color: #fff;
+  font-family: Sans-serif;
+  font-size: 20px;
+  height: 60px;
+  width: 60px;
+  padding: 20px 0px;
+  line-height: 20px;
+  margin: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease 0s;
+  background-color: rgba(234,104,17, 0.6);
+}
+
+.orange-btn:hover,
+.orange-btn:active {
+  background-color: rgba(234,104,17, 0.3);
+  color: #000;
+}
+
+.double-wide {
+  display: inline-block;
+  color: #fff;
+  font-family: Sans-serif;
+  font-size: 20px;
+  height: 60px;
+  width: 135px;
+  padding: 20px 0px;
+  line-height: 20px;
+  margin: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  transition: all 0.3s ease 0s;
+}
