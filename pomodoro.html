@@ -1,105 +1,59 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
 	<meta charset="UTF-8">
-
-  <title>Timer</title>
-	<link rel="stylesheet" href="css/main.css">
+	<title>iPhone 6c</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/devices.min.css" type="text/css">
-	<script src="js/jquery-1.12.0.js"></script>
-  <script src="js/pomodoro.js"></script>
+	<style>
+		
+	body {
+		background-color: #ccc;
+	}
+		
+.blue{
+	background: #627da0;
+	border: 1px solid #bfbfbf;
+}
 
+.screen h1 {
+	color: red;
+		}
+		
+.marvel-device {
+	margin: 0 auto;
+	top: 50vh;
+	margin-top: -410px;
+	display: block;
+}
+
+html {
+    zoom: 0.95;
+    -moz-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+}
+
+</style>
 </head>
 
-<!--
-* Doug Wells's pomodoro project
--->
-
 <body>
-    <div class="marvel-device iphone6 silver">
-        <div class="top-bar"></div>
-        <div class="sleep"></div>
-        <div class="volume"></div>
-        <div class="camera"></div>
-        <div class="sensor"></div>
-        <div class="speaker"></div>
-        <div class="screen">
-            <img style="width: 375px; height=750px;" src="images/pomo.jpg" alt="Pomodoro Timer">
-            <div class="blueBox box"></div>
-        </div>
-        <div class="home"></div>
-        <div class="bottom-bar"></div>
-    </div>
 
-
-	<div class="container">
-
-		<div class="row">
-			<div col-xs-offset-4 col-xs-4>
-				<h4>Pomodoro Clock</h4>
-			</div>
+	<div class="marvel-device iphone6 silver">
+		<div class="top-bar"></div>
+		<div class="sleep"></div>
+		<div class="volume"></div>
+		<div class="camera"></div>
+		<div class="sensor"></div>
+		<div class="speaker"></div>
+		<div class="screen">
+				<!-- Content goes here -->
+				<div class="col-xs-6 blue">LHS</div>
+				<div class="col-xs-6 blue">RHS</div>
 		</div>
-
-		<div class="row">
-			<div col-xs-offset-4 col-xs-4>
-				<!-- Code for semi-circle countdown -->
-				<h2>25:00</h2>
-			</div>
-		</div>
-
-		<div class="row">
-			<div col-xs-offset-4 col-xs-4>
-				<div class=".semi-transparent-button btn">Settings</div>
-			</div>
-		</div>
-
-		<div class="row">
-			<div col-xs-offset-4 col-xs-2>
-				<div class=".gray-font">session length</div>
-			</div>
-			<div col-xs-2>
-				<div class=".gray-font">break length</div>
-			</div>
-		</div>
-
-			<div class="row">
-				<div col-xs-offset-4 col-xs-2>
-					<h3>25 min</h3>
-				</div>
-				<div col-xs-2>
-					<h3> 5 min</h3>
-				</div>
-			</div>
-
-			<div class="row">
-				<div col-xs-offset-4 col-xs-2>
-					<h3>   +   -   </h3>
-				</div>
-				<div col-xs-2>
-					<h3>   +   -   </h3>
-				</div>
-			</div>
-			<br>
-
-			<div class="row">
-				<div col-xs-offset-4 col-xs-2>
-					<h3>Start</h3>
-				</div>
-			</div>
-
-
-		</div>
-
-		<div class="row">
-			<div col-xs-offset- col-xs-4>
-				<div class=".semi-transparent-button btn">Settings</div>
-			</div>
-		</div>
-
+		<div class="home"></div>
+		<div class="bottom-bar"></div>
 	</div>
-
+	
 </body>
-
 </html>
