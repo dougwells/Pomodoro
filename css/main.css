@@ -1,43 +1,39 @@
 /*
-    Doug Wells's Calculator project
-    See if you can find the "easter egg"
-    Finding it is as easy as PI
+    Doug Wells's Pomodoro project
 */
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 body{
-  /*background: url('https://dl.dropboxusercontent.com/s/ve1o0rvptdf8gnq/track.jpg') no-repeat center center fixed;*/
-background-color: red; /* Fall back if browser does not support linear-gradient */
-/* these will reset other properties, like background-position, but it does know what you mean */
-background: red;
-background: no-repeat center center fixed
-  linear-gradient(
-    to bottom right,
-    #f06d06, #ED4337);
+	background-color: #ccc;
+	}
 
-width: 100%;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  overflow: hidden;
+.blue{
+	background: #627da0;
+	border: 1px solid #bfbfbf;
 }
 
-.positionRel {
-  position: relative;
-}
+.screen h1 {
+	color: red;
+		}
 
-.positionAb {
+.phone-container{
+  width: 100%;
   position: absolute;
-  top: 10vh;
-  left: 10vw;
-
+  top: 50vh;
+  margin-top: -350px;
 }
+
+.marvel-device {
+	margin: 0 auto;
+	display: block;
+}
+
+html {
+    zoom: 0.9;
+    -moz-transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+}
+
 
 .semi-transparent-button {
   display: block;
@@ -47,7 +43,6 @@ width: 100%;
   width: 80%;
   max-width: 200px;
   background: #fff;
-  /* fallback color for old browsers */
   background: rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   text-align: center;
