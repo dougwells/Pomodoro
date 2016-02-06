@@ -9,17 +9,28 @@ body{
 .blue{
 	background: #627da0;
 	border: 1px solid #bfbfbf;
+  height:100px;
+  width: 100px;
 }
 
-.screen h1 {
+.cd-iphone-6{
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.cd-screen {
+  background-color: white !important;
+}
+
+.cd-screen h1 {
 	color: red;
 		}
 
 .phone-container{
   width: 100%;
   position: absolute;
-  top: 50vh;
-  margin-top: -350px;
+  top: 50%;
+  margin-top: 10px;
 }
 
 .marvel-device {
@@ -27,12 +38,6 @@ body{
 	display: block;
 }
 
-html {
-    zoom: 0.9;
-    -moz-transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-    transform: scale(1.0);
-}
 
 
 .semi-transparent-button {
