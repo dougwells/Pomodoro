@@ -7,9 +7,9 @@ body{
 }
 
 .circle {
+	position: relative;
 	margin: 0 auto;
 }
-
 
 
 .blue{
@@ -25,6 +25,7 @@ body{
 }
 
 .cd-screen {
+	position: absolute;
   background-color: white !important;
 }
 
