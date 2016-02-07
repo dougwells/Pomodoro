@@ -9,7 +9,7 @@ $( document ).ready(function() {
   var playSec = playMin*60
   var endSec = playSec + workSec
   var elapsedSec = 0;
-  var remainingSeconds;
+  var remainingSec;
   var percent = 0   //0-100=work, 101-200=play
 
 //Object to hold timer output & properties
@@ -28,51 +28,37 @@ $( document ).ready(function() {
         //countdown.mode/message (work, play or done)
         //countdown.mode-color (progress bar color)
 //
+  console.log("Before Loop.  Work Min = " + workMin);
   while (elapsedSec<endSec){
     setInterval(function(){
-      elapsedSeconds = elapsedSeconds + 1;
-      percent = 100*elapsedSec/endSec;
+      elapsedSec = elapsedSec + 1;
 
       //work time
-      if(percent<100){
-        remainingSeconds= workSec - elapsedSeconds;
-        minutes = Math.floor(remainingSeconds/60);
-        seconds = timerSeconds - minutes*60;  //function, returns timer object
+      if(elapsedSec<=workSec){
+        remainingSec= workSec - elapsedSec;
         timer.message = "Time to work ...";
-        timer.percent = remainingSeconds/workSec*100;
-        timer.percent-color = 0-33 = light gren
-                              33-66 = med gren
-                              67-100 = drk gren
+        timer.percent = elapsedSec/workSec*100;
+        timer.bgColor = "linear-gradient(to bottom right, #7FDBFF, #0074D9)"
+        timer.elementColor = "aqua";
 
         //playtime
-      }else if (percent<200){
-          remainingSeconds = playSec + workSec - elapsedSeconds;
+      }else if (elapsedSec<endSec){
+          remainingSec = playSec + workSec - elapsedSec;
+          timer.message = "Go Play ...!";
+          timer.percent = (elapsedSec-workSec/playSec*100;
+          timer.bgColor = "linear-gradient(to bottom right, #7FDBFF, #0074D9)"
+          timer.elementColor = "aqua";
 
         //if work time is over, set play timer
         }else {
-          remainingSeconds = 0;
+          remainingSec = 0;
         }
+        timer.minutes = Math.floor(remainingSec/60);
+        timer.seconds = remainingSec - minutes*60;  //function, returns timer object
+        console.log(minutes, seconds);
     },500);
   }
 
-
-
-
-
-
-
-function timer (remainingSeconds){
-  // var minutes = Math.floor(remainingSeconds/60);
-  // var seconds = timerSeconds - minutes*60;
-  //
-  // setInterval(function(){
-  //   if(timerSeconds>0){
-  //     timerSeconds = timerSeconds-1;
-  //     minutes = Math.floor(timerSeconds/60);
-  //     seconds = timerSeconds - minutes*60;
-  //     console.log(minutes, seconds);
-  //   }
-  // }, 500);
 
 
   //Input data into radial progress indicator
@@ -81,5 +67,6 @@ function timer (remainingSeconds){
     $("#circle-1").attr("data-part", playMin);
   	$("#circle-1").attr("data-total", workMin);
     $('#circle-1').circliful();
+
 
 });
