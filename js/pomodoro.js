@@ -2,8 +2,8 @@
 $( document ).ready(function() {
 
 //Initial variables set by User
-  var workMin = 50;
-  var playMin = 10;
+  var workMin = 5;
+  var playMin = 1;
 
 //Other variables set at start
   var workSec = workMin*60
@@ -15,14 +15,7 @@ $( document ).ready(function() {
 
 //Object to hold timer output & properties
   var timer = {};
-  var i = 0;
-  var j = 0;
-  var k = 0;
 
-
-//
-  console.log("Before Loop.  Work Min = " + workMin);
-  // while (elapsedSec<endSec){
     setInterval(function(){
       elapsedSec = elapsedSec + 1;
 
@@ -52,17 +45,19 @@ $( document ).ready(function() {
         }
 
         timer.minutes = Math.floor(remainingSec/60);
-        timer.seconds = remainingSec - timer.minutes*60;  //function, returns timer object
-        if(timer.seconds==0 && elapsedSec<=endSec) {
-          i=timer.percent;
-          j=timer.percent.toString()+"%";
-          console.log(remainingSec, j, timer.minutes, timer.seconds, timer.percent);
-          $("#circle-1").attr("data-text", j);
-          $("#circle-1").attr("data-part", i);
+        timer.seconds = remainingSec - timer.minutes*60;
+        (timer.seconds<10 ? timer.ss = "0"+timer.seconds.toString() : timer.ss=timer.seconds.toString());
+        timer.mmss = timer.minutes.toString() + ":" + timer.ss;
+
+        //function, returns timer object
+        if(elapsedSec<=endSec) {
+          console.log(remainingSec, timer.mmss, timer.minutes, timer.seconds, timer.percent);
+          $("#circle-1").attr("data-text", timer.mmss);
+          $("#circle-1").attr("data-part", timer.percent);
           $("#circle-1").attr("data-info", timer.message);
-          $('#circle-1').empty().removeData().attr('data-percent', j).circliful()
+          $('#circle-1').empty().removeData().attr('data-part', timer.percent).circliful()
         }
-  }, 5);
+  }, 100);
   // }
 
 
