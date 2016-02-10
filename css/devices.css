@@ -1,3 +1,19 @@
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @dougwells
+ Unwatch 11
+  Unstar 52
+  Fork 7 yamartino/CSSDevices
+ Code  Issues 1  Pull requests 0  Wiki  Pulse  Graphs
+Branch: master Find file Copy pathCSSDevices/devices.css
+d3a48f2  on Sep 28, 2015
+@yamartino yamartino Unminified version and release of 2.2.0
+1 contributor
+RawBlameHistory     698 lines (648 sloc)  18.4 KB
 /*! CSSDevices v2.2.0 | MIT license | Maintained by Stuart Yamartino | http://cssdevices.io */
 .cd-iphone-5s,
 .cd-iphone-5c,
@@ -527,14 +543,14 @@ body {
   overflow: hidden; }
 
 .cd-screen > * {
-  display: inline-block; /* originally was "none" */
-  position: static;  /* originally was "absolute" */
-  /*top: 0;
+  display: block;
+  position: relative;;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 100%;*/
+  height: 100%;
   color: white;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -545,8 +561,8 @@ body {
   -moz-user-drag: none;
   user-drag: none; }
 
-/*.cd-screen > *:first-child {
-  display: block; }*/
+.cd-screen > *:first-child {
+  display: block; }
 
 .cd-screen.cd-screen-scrolling {
   overflow-y: scroll; }

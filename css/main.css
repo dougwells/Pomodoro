@@ -3,21 +3,21 @@
 */
 
 body{
-	/*background-color: #ccc;*/
 	background: linear-gradient(to bottom right, #7FDBFF, #0074D9);
-}
-
-.circle {
-	position: relative;
-	margin: 0 auto;
 }
 
 
 .blue{
+	display: inline-block;
 	background: #627da0;
+	color: green;
 	border: 1px solid #bfbfbf;
   height:100px;
   width: 100px;
+}
+
+.circle {
+	height: 150px;
 }
 
 .cd-iphone-6{
@@ -25,20 +25,14 @@ body{
   margin-top: 50px;
 }
 
-.cd-screen {
+.cd-iphone-6 .cd-screen {
 	position: absolute;
-  background-color: white !important;
+	display: inline-block;
+	background: white;
 }
 
-.cd-screen h1 {
-	color: #0074D9;
-		}
-
-.phone-container{
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  margin-top: 10px;
+.cd-iphone-6 .cd-screen >* {
+	color: red;
 }
 
 
