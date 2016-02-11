@@ -83,7 +83,7 @@ function pomodoro (workMin, playMin){
       //Update & redraw radial progress bar each second.  Search "github circliful" for more information
         $('#circle-1').empty().removeData().attr('data-part', timer.percent).circliful();
 
-  }, 200);  //End "clock" / setInterval
+  }, 1000);  //End "clock" / setInterval
 
 } // End pomodoro function
 

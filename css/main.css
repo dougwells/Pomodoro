@@ -7,32 +7,35 @@ body{
 }
 
 
-.blue{
+.blueBox{
 	display: inline-block;
-	background: #627da0;
+	background: orange;
 	color: black;
 	border: 1px solid #bfbfbf;
   height:100px;
   width: 100px;
 }
 
-.circle {
+#circle-1 {
 	height: 150px;
+	color: red;
 }
 
-/*Over-ride code in devices.css*/
 
+/*
+******* Over-ride code in devices.css ******
+*/
 
 /* line 542 devices.css */
 .cd-screen {
 	overflow: visible;
 }
 
-/* line 531 devices.css */
+/* line 511 devices.css */
 .cd-iphone-6{
   position: relative;
 	display: block;
-  z-index: 50;
+  z-index: 1;
   font-size: 14px;
   margin: 0 auto;  /*center on page */
   margin-top: 50px;
@@ -41,23 +44,32 @@ body{
 
 /* line 238 devices.css */
 .cd-iphone-6 .cd-screen {
-	/* absolute so posit. w/in iphone */
-	position: absolute;
 	background: white;
 }
 
 /* line 545 devices.css */
-.cd-screen >* {
-	position: static;
-	display: default;
-	color: red;
+.cd-screen > * {
+	display: inline-block;
+  position: static;
+	width: none;
+  height: none;
+  color: black;
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  -o-user-select: all; 
 }
 
 .cd-screen > *:first-child {
-  display: initial; 
+  display: inline-block; 
 }
 
+.cd-screen h1 {
+	display: block;
+	height: initial;
+}
 
+/******* CSS from earlier projects ******/
 .semi-transparent-button {
   display: block;
   box-sizing: border-box;
