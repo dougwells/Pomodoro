@@ -10,7 +10,7 @@ body{
 .blue{
 	display: inline-block;
 	background: #627da0;
-	color: green;
+	color: black;
 	border: 1px solid #bfbfbf;
   height:100px;
   width: 100px;
@@ -20,19 +20,41 @@ body{
 	height: 150px;
 }
 
-.cd-iphone-6{
-  margin: 0 auto;
-  margin-top: 50px;
+/*Over-ride code in devices.css*/
+
+
+/* line 542 devices.css */
+.cd-screen {
+	overflow: visible;
 }
 
+/* line 531 devices.css */
+.cd-iphone-6{
+  position: relative;
+	display: block;
+  z-index: 50;
+  font-size: 14px;
+  margin: 0 auto;  /*center on page */
+  margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+/* line 238 devices.css */
 .cd-iphone-6 .cd-screen {
+	/* absolute so posit. w/in iphone */
 	position: absolute;
-	display: inline-block;
 	background: white;
 }
 
-.cd-iphone-6 .cd-screen >* {
+/* line 545 devices.css */
+.cd-screen >* {
+	position: static;
+	display: default;
 	color: red;
+}
+
+.cd-screen > *:first-child {
+  display: initial; 
 }
 
 
