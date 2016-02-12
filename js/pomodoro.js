@@ -2,7 +2,7 @@
 $( document ).ready(function() {
 
     $('#circle-1').circliful();
-    pomodoro(0,0);
+    pomodoro(0.5,0.25);
 
 
 
