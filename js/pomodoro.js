@@ -2,7 +2,9 @@
 $( document ).ready(function() {
 
     $('#circle-1').circliful();
-    pomodoro(0.5,0.25);
+    pomodoro(0.1,0.05);
+
+		
 
 
 
@@ -86,5 +88,35 @@ function pomodoro (workMin, playMin){
   }, 1000);  //End "clock" / setInterval
 
 } // End pomodoro function
+	
+
+	
+// Number increment/decrement function
+(function($) {
+	$.fn.spinner = function() {
+	this.each(function() {
+	var el = $(this);
+
+	// add elements
+	el.wrap('<span class="spinner"></span>');     
+	el.before('<span class="sub">-</span>');
+	el.after('<span class="add">+</span>');
+
+	// substract
+	el.parent().on('click', '.sub', function () {
+	if (el.val() > parseInt(el.attr('min')))
+	el.val( function(i, oldval) { return --oldval; });
+	});
+
+	// increment
+	el.parent().on('click', '.add', function () {
+	if (el.val() < parseInt(el.attr('max')))
+	el.val( function(i, oldval) { return ++oldval; });
+	});
+			});
+	};
+})(jQuery);
+$('input[type=number]').spinner();
+// End increment/decrement function
 
 }); // End $(document).ready
