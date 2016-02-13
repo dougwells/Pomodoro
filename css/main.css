@@ -25,18 +25,18 @@
 /* line 238 devices.css */
 /* makes screen white (vs default black) */
 .cd-iphone-6 .cd-screen {
-	position: relative;
 	background: white;
+	
 }
 
 /* line 545 devices.css */
 /* screen friendlier - displaying multiple elements*/
 .cd-screen > * {
-	display: inline-block;
+/*	display: inline-block;*/
   position: relative;
 	width: auto;
   height: auto;
-  color: black;
+  color: #0074D9;
   -webkit-user-select: all;
   -moz-user-select: all;
   -ms-user-select: all;
@@ -44,15 +44,7 @@
 }
 
 .cd-screen > *:first-child {
-	display: inline-block;
-  position: relative;
-	width: auto;
-  height: auto;
-  color: black;
-  -webkit-user-select: all;
-  -moz-user-select: all;
-  -ms-user-select: all;
-  -o-user-select: all;
+
 }
 
 /* *** Formatting elements w/in device screen *** */
@@ -66,7 +58,10 @@ body{
 	top: 10px;
 	width: 100%;
 	height: 150px;
-	color: #aaa;
+	font-family: Lato;
+  font-weight: 700;
+  font-size: 1em;
+  color: #7FDBFF;
 	margin: 0 auto;
 }
 
@@ -86,15 +81,17 @@ CSS from earlier projects
 	 	position: relative;
     display: block;
     top: 30px;
-    width: 90%;
+    width: 80%;
+	 	text-align: center;
 	 	max-width: 300px;
     margin: 0 auto;
 	 	margin-bottom:30px;
-    font-size: 2em;
     text-decoration: none;
-    color: blue;
-    font-weight: bold;
-    line-height: 1.1;
+	 	font-family: Lato;
+  	font-weight: 700;
+  	font-size: 2em;
+  	color: #0074D9;
+
   }
 
 .caption h2 {
@@ -216,11 +213,26 @@ CSS from earlier projects
 /*
 *****		Increment/Decrement Button   ****
 */
+.center-btns {
+	display: block;
+	height: auto;
+	border: 2px solid red;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#work{
+	left: 10px;
+}
+
+#play {
+	right 10px;
+}
 
 span.spinner {
   position: relative;
 	display: inline-block;
-	margin-left: 20px;
 	width: 100px;
   height: 35px;
   user-select: none;
