@@ -25,36 +25,43 @@
             <div class="cd-camera"></div>
             <div class="cd-ear"></div>
             <div class="cd-home"></div>
-            <div class="cd-screen">
+            <div class="cd-screen">         		
            		<div class="caption">
-            		Pomodoro Timer
+            		Pomodoro Timer 1
+							</div>
+							<div class="caption">
+            		Pomodoro Timer 1
 							</div>
 
+							<div id="circle-1" class="circle"
+								data-dimension="250"
+								data-animationstep=0
+								data-type="half"
+								data-bordersize=10
+								data-text=""
+								data-part="0"
+								data-total="100"
+								data-info="Ready"
+								data-delay = 0
+								data-fontsize="42"
+								data-bgcolor="#7FDBFF"
+								data-fgcolor="#ff0000"
+								data-fill="">
+							</div>
+							
+							<span class="spinner">
+								<span class="sub">-</span>
+								<input type="text" value="work">
+								<span class="add">+</span>
+							</span>
 
-								<div id="circle-1" class="circle"
-										data-dimension="250"
-										data-animationstep=0
-										data-type="half"
-										data-bordersize=10
-										data-text=""
-										data-part="0"
-										data-total="100"
-										data-info="Ready"
-										data-delay = 0
-										data-fontsize="42"
-										data-bgcolor="#7FDBFF"
-										data-fgcolor="#ff0000"
-										data-fill="">
-								</div>
-								<span class="spinner"><span class="sub">-</span><input data-brackets-id="2185" type="number" min="1" max="100" value="20"><span class="add">+</span>
-								</span>
-								
-								<input type="number" min="1" max="100" value="20" />
-								<div class="calc-btn">Play</div>
-								<div class="calc-btn">Work</div>
-								<input type="number" min="1" max="100" value="25" />
+							<span class="spinner">
+								<span class="sub">-</span>
+								<input id="play" type="text" value="play">
+								<span class="add">+</span>
+							</span>
 
-
+            	<div class="semi-transparent-button">Start</div>
 
             </div> <!-- End cd-screen -->
             

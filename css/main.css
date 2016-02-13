@@ -25,6 +25,7 @@
 /* line 238 devices.css */
 /* makes screen white (vs default black) */
 .cd-iphone-6 .cd-screen {
+	position: relative;
 	background: white;
 }
 
@@ -43,7 +44,15 @@
 }
 
 .cd-screen > *:first-child {
-  display: inline-block; 
+	display: inline-block;
+  position: relative;
+	width: auto;
+  height: auto;
+  color: black;
+  -webkit-user-select: all;
+  -moz-user-select: all;
+  -ms-user-select: all;
+  -o-user-select: all;
 }
 
 /* *** Formatting elements w/in device screen *** */
@@ -74,12 +83,13 @@ CSS from earlier projects
 *
 ******/
  .caption {
-    position: relative;
+	 	position: relative;
+    display: block;
     top: 30px;
-    width: 100%;
+    width: 90%;
+	 	max-width: 300px;
     margin: 0 auto;
 	 	margin-bottom:30px;
-    text-align: center;
     font-size: 2em;
     text-decoration: none;
     color: blue;
@@ -207,23 +217,11 @@ CSS from earlier projects
 *****		Increment/Decrement Button   ****
 */
 
-input[type=number] {
-  float: left;
-	display: inline-block;
-	position: relative;
-  width: 50px;
-		margin 0 auto;
-  height: 35px;
-  padding: 0;
-  font-size: 1.2em;
-  text-align: center;
-  color: #0074D9;
-  border: 1px #0074D9 solid;
-}
-
 span.spinner {
   position: relative;
-	width: 100%;
+	display: inline-block;
+	margin-left: 20px;
+	width: 100px;
   height: 35px;
   user-select: none;
   -ms-user-select: none;
@@ -232,9 +230,22 @@ span.spinner {
   -webkit-touch-callout: none;
 }
 
+.spinner input[type=text] {
+  float: left;
+	display: inline-block;
+	position: static;
+  width: 50px;
+  height: 35px;
+  padding: 0;
+  font-size: 1.2em;
+  text-align: center;
+  color: #0074D9;
+  border: 1px #0074D9 solid;
+}
+
 span.spinner > .sub,
 span.spinner > .add {
-	position: relative;
+	position: static;
   float: left;
   width: 25px;
   height: 35px;
