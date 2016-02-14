@@ -53,9 +53,10 @@ body{
 	background: linear-gradient(to bottom right, #7FDBFF, #0074D9);
 }
 
-.circle {
+.rad-progress {
+	position: relative;
+	top: 40px;
 	display: block;
-	top: 10px;
 	width: 100%;
 	height: 150px;
 	font-family: Lato;
@@ -72,13 +73,96 @@ body{
 
 .btn-rect {
 	position: absolute;
-	top: 10px;
-	left: 10px;
+	top: 90%;
 	display: inline-block;
-	width: 50px;
-	height: 50px;
+	padding: 2.5%;
+	font-size: 1.8em;
+	text-align: center;
+	width: 100%;
+	height: 10%;
+	color: #fff;
+	background: linear-gradient(to bottom right, #7FDBFF, #0074D9);
 	border: 1px solid red;
 }
+
+/*
+*****		Increment/Decrement Button   ****
+*/
+.center-btns {
+	display: block;
+	height: 100px;
+	border: 2px solid red;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+span.spinner {
+  position: relative;
+	top: 25px;
+	margin-left: 2%;
+	margin-right: 2%;
+	display: inline-block;
+	width: 45%;
+  height: 35px;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.spinner input[type=text] {
+  float: left;
+	display: inline-block;
+	position: static;
+  width: 50%;
+  height: 35px;
+  padding: 0;
+  font-size: 1.2em;
+  text-align: center;
+  color: #0074D9;
+  border: 1px #0074D9 solid;
+}
+
+span.spinner > .sub,
+span.spinner > .add {
+	position: static;
+  float: left;
+  width: 25%;
+  height: 35px;
+  text-align: center;
+  font-family: Lato;
+  font-weight: 700;
+  font-size: 1.2em;
+  line-height: 33px;
+  color: #0074D9;
+  border: 1px #0074D9 solid;
+  border-right: 0;
+  border-radius: 2px 0 0 2px;
+  cursor: pointer;
+  transition: 0.1s linear;
+  -o-transition: 0.1s linear;
+  -ms-transition: 0.1s linear;
+  -moz-transition: 0.1s linear;
+  -webkit-transition: 0.1s linear;
+}
+
+span.spinner > .add {
+  border: 1px #0074D9 solid;
+  border-left: 0;
+  border-radius: 0 2px 2px 0;
+}
+
+span.spinner > .sub:hover,
+span.spinner > .add:hover {
+  background: #0074D9;
+  color: #fff;
+}
+ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+ -webkit-appearance: none;
+}
+
 
 /******* 
 *
@@ -90,7 +174,7 @@ CSS from earlier projects
  .caption {
 	 	position: relative;
     display: block;
-    top: 30px;
+    top: 10%;
     width: 80%;
 	 	text-align: center;
 	 	max-width: 300px;
@@ -220,83 +304,6 @@ CSS from earlier projects
   transition: all 0.3s ease 0s;
 }
 
-/*
-*****		Increment/Decrement Button   ****
-*/
-.center-btns {
-	display: block;
-	height: 100px;
-	border: 2px solid red;
-	width: 100%;
-	text-align: center;
-	margin: 0 auto;
-}
-
-span.spinner {
-  position: relative;
-	left: 10px;
-	margin-right: 40px;
-	display: inline-block;
-	width: 100px;
-  height: 35px;
-  user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-}
-
-.spinner input[type=text] {
-  float: left;
-	display: inline-block;
-	position: static;
-  width: 50px;
-  height: 35px;
-  padding: 0;
-  font-size: 1.2em;
-  text-align: center;
-  color: #0074D9;
-  border: 1px #0074D9 solid;
-}
-
-span.spinner > .sub,
-span.spinner > .add {
-	position: static;
-  float: left;
-  width: 25px;
-  height: 35px;
-  text-align: center;
-  font-family: Lato;
-  font-weight: 700;
-  font-size: 1.2em;
-  line-height: 33px;
-  color: #0074D9;
-  border: 1px #0074D9 solid;
-  border-right: 0;
-  border-radius: 2px 0 0 2px;
-  cursor: pointer;
-  transition: 0.1s linear;
-  -o-transition: 0.1s linear;
-  -ms-transition: 0.1s linear;
-  -moz-transition: 0.1s linear;
-  -webkit-transition: 0.1s linear;
-}
-
-span.spinner > .add {
-  top: 0;
-  border: 1px #0074D9 solid;
-  border-left: 0;
-  border-radius: 0 2px 2px 0;
-}
-
-span.spinner > .sub:hover,
-span.spinner > .add:hover {
-  background: #0074D9;
-  color: #fff;
-}
- input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
- -webkit-appearance: none;
-}
 
 /*
 

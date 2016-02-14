@@ -1,8 +1,36 @@
 
 $( document ).ready(function() {
+	var work = 0;
+	var play = 4;
+	$('#circle-1').circliful();
+	
+	// Set time for work //
+	$("#work .sub").click(function(){
+		work=work-1;
+		console.log(work);
+	});
+		$("#work .add").click(function(){
+		work=work+1;
+		console.log(work);
+	});
+	
+		// Set time for play //
+	$("#play .sub").click(function(){
+		play=play-1;
+		console.log(play);
+	});
+		$("#play .add").click(function(){
+		play=play+1;
+		console.log(play);
+			pomodoro(work,play);
+	});
 
-    $('#circle-1').circliful();
-    pomodoro(0.1,0.05);
+	$("btn-rect").click(function(){
+				pomodoro(2,1);
+	});
+	
+
+	
 
 		
 
@@ -85,7 +113,7 @@ function pomodoro (workMin, playMin){
       //Update & redraw radial progress bar each second.  Search "github circliful" for more information
         $('#circle-1').empty().removeData().attr('data-part', timer.percent).circliful();
 
-  }, 1000);  //End "clock" / setInterval
+  }, 100);  //End "clock" / setInterval
 
 } // End pomodoro function
 
