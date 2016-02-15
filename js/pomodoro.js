@@ -1,32 +1,37 @@
 
 $( document ).ready(function() {
-	var work = 0;
+	var work = 24;
 	var play = 4;
 	$('#circle-1').circliful();
 	
 	// Set time for work //
 	$("#work .sub").click(function(){
 		work=work-1;
+		$("#work-value").val(work);
 		console.log(work);
 	});
 		$("#work .add").click(function(){
 		work=work+1;
+		$("#work-value").val(work);
 		console.log(work);
 	});
 	
 		// Set time for play //
 	$("#play .sub").click(function(){
 		play=play-1;
+		$("#play-value").val(play);
 		console.log(play);
 	});
 		$("#play .add").click(function(){
 		play=play+1;
+		$("#play-value").val(play);
 		console.log(play);
-			pomodoro(work,play);
 	});
 
-	$("btn-rect").click(function(){
-				pomodoro(2,1);
+	// When click "Start" button
+	$(".btn-rect").click(function(){
+				pomodoro(work,play);
+		
 	});
 	
 
