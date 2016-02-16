@@ -1,38 +1,82 @@
 
 $( document ).ready(function() {
-	var work = 24;
-	var play = 4;
+	var work = 3;
+	var play = 2;
+	var time;
 	$('#circle-1').circliful();
 	
 	// Set time for work //
 	$("#work .sub").click(function(){
-		work=work-1;
-		$("#work-value").val(work);
-		console.log(work);
-	});
+		work--;
+		workTime = work + ":00";
+		
+		//update button label
+		$("#work input").attr("value",work);
+		
+		//update radial progress
+		$('#circle-1').empty().removeData().attr({
+			"data-text": workTime,
+			"data-info": "Work Minutes"
+		}
+			).circliful();
+	});  //end work substract button
+	
 		$("#work .add").click(function(){
-		work=work+1;
-		$("#work-value").val(work);
-		console.log(work);
-	});
+		work++;
+		workTime = work + ":00";
+			
+		//Update button label
+		$("#work input").attr("value",work);
+			
+		//Update radial progress
+		$('#circle-1').empty().removeData().attr({
+			"data-text": workTime,
+			"data-info": "Work Minutes"
+		}
+			).circliful();
+			
+	}); //End work add button
 	
 		// Set time for play //
 	$("#play .sub").click(function(){
-		play=play-1;
-		$("#play-value").val(play);
-		console.log(play);
+		play--;
+		playTime = play +":00";
+		
+		//update button label
+		$("#play input").attr("value",play);
+		
+		//update radial progress
+		$('#circle-1').empty().removeData().attr({
+			"data-text": playTime,
+			"data-info": "Play Minutes"
+		}
+			).circliful();
 	});
+		
 		$("#play .add").click(function(){
-		play=play+1;
-		$("#play-value").val(play);
-		console.log(play);
+		play++;
+		playTime = play +":00";
+			
+		//update button label
+		$("#play input").attr("value",play);
+		
+		//update radial progress
+		$('#circle-1').empty().removeData().attr({
+			"data-text": playTime,
+			"data-info": "Play Minutes"
+		}
+			).circliful();
 	});
 
-	// When click "Start" button
+	// When click "Start" or "Reset" button
 	$(".btn-rect").click(function(){
+		//Reset button lables to "work" & "play"
+				$("#work input").val("work");
+				$("#play input").val("play");
+		//Run Pomodoro
 				pomodoro(work,play);
 		
-	});
+	});  //End Start button push actions
 	
 
 	
@@ -49,7 +93,7 @@ function pomodoro (workMin, playMin){
   var playSec = playMin*60
   var endSec = playSec + workSec
   var elapsedSec = 0;
-  var remainingSec;
+  var remainingSec=0;
   var percent = 0
 //Object to hold timer output & properties
   var timer = {};
@@ -107,18 +151,18 @@ function pomodoro (workMin, playMin){
         if(elapsedSec<endSec){
           if(elapsedSec===1){$("body").css("background", "linear-gradient(to bottom right, #00dbde, #fc00ff");}
           if(elapsedSec===workSec){$("body").css("background", "linear-gradient(to bottom right, #FDFC47, #24FE41");}
-          console.log(remainingSec, timer.mmss, timer.minutes, timer.seconds, timer.percent);
         } else {
           //Need to clear setInterval so timer stops running at end of work and play
           clearInterval(clock);
           $("body").css("background", "linear-gradient(to bottom right, #7FDBFF, #0074D9");
-          console.log("done ", remainingSec, timer.mmss, timer.minutes, timer.seconds, timer.percent);
         }
 
       //Update & redraw radial progress bar each second.  Search "github circliful" for more information
         $('#circle-1').empty().removeData().attr('data-part', timer.percent).circliful();
 
-  }, 100);  //End "clock" / setInterval
+  }, 100);  //End "clock" & End setInterval
+	
+
 
 } // End pomodoro function
 
