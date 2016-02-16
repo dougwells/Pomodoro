@@ -1,7 +1,7 @@
 
 $( document ).ready(function() {
-	var work = 3;
-	var play = 2;
+	var work = 25;
+	var play = 5;
 	var time;
 	$('#circle-1').circliful();
 	
@@ -11,7 +11,7 @@ $( document ).ready(function() {
 		workTime = work + ":00";
 		
 		//update button label
-		$("#work input").attr("value",work);
+		$("#work input").val(work);
 		
 		//update radial progress
 		$('#circle-1').empty().removeData().attr({
@@ -26,7 +26,7 @@ $( document ).ready(function() {
 		workTime = work + ":00";
 			
 		//Update button label
-		$("#work input").attr("value",work);
+		$("#work input").val(work);
 			
 		//Update radial progress
 		$('#circle-1').empty().removeData().attr({
@@ -43,7 +43,7 @@ $( document ).ready(function() {
 		playTime = play +":00";
 		
 		//update button label
-		$("#play input").attr("value",play);
+		$("#play input").val(play);
 		
 		//update radial progress
 		$('#circle-1').empty().removeData().attr({
@@ -58,7 +58,7 @@ $( document ).ready(function() {
 		playTime = play +":00";
 			
 		//update button label
-		$("#play input").attr("value",play);
+		$("#play input").val(play);
 		
 		//update radial progress
 		$('#circle-1').empty().removeData().attr({
@@ -69,13 +69,20 @@ $( document ).ready(function() {
 	});
 
 	// When click "Start" or "Reset" button
-	$(".btn-rect").click(function(){
-		//Reset button lables to "work" & "play"
-				$("#work input").val("work");
-				$("#play input").val("play");
-		//Run Pomodoro
+	$(".btn-rect").click(function(){		
+			//Run Pomodoro
 				pomodoro(work,play);
 		
+			//reset button labels
+				$("#work input").val("work");
+				$("#play input").val("play");
+				if($("#start").text()!=="Reset"){
+					 $("#start").text("Reset")
+					}else{
+						location.reload();
+					}
+
+
 	});  //End Start button push actions
 	
 
@@ -99,7 +106,7 @@ function pomodoro (workMin, playMin){
   var timer = {};
 
 //clock updates every 1 second
-  var clock = setInterval(function(){
+  clock = setInterval(function(){
       elapsedSec = elapsedSec + 1;
 
       //work time
@@ -160,7 +167,7 @@ function pomodoro (workMin, playMin){
       //Update & redraw radial progress bar each second.  Search "github circliful" for more information
         $('#circle-1').empty().removeData().attr('data-part', timer.percent).circliful();
 
-  }, 100);  //End "clock" & End setInterval
+  }, 1000);  //End "clock" & End setInterval
 	
 
 
