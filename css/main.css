@@ -102,7 +102,7 @@ body{
 */
 
 
-span.spinner {
+.spinner {
   position: relative;
 	top: 25px;
 	margin-left: 2%;
@@ -110,6 +110,7 @@ span.spinner {
 	display: inline-block;
 	width: 45%;
   height: 35px;
+	color: black;
   user-select: none;
   -ms-user-select: none;
   -moz-user-select: none;
@@ -168,7 +169,7 @@ span.spinner > .add:hover {
 span.spinner > .sub:active,
 span.spinner > .add:active {
   background: #7FDBFF;
-  color: #fff;
+	color: #fff;
 }
 
 

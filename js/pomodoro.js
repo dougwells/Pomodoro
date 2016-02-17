@@ -134,7 +134,7 @@ function pomodoro (workMin, playMin){
           timer.message = "Another Pomodoro?";
           timer.percent = 0;
           timer.bgColor = "#7FDBFF";
-          timer.fgColor = "#24FE41";
+          timer.fgColor = "#0074D9";
           timer.elementColor = "linear-gradient(to bottom right, #7FDBFF, #0074D9)";
         }
 
@@ -157,20 +157,26 @@ function pomodoro (workMin, playMin){
       //Set HTML background color at start of work time, start of play & at end
         if(elapsedSec<endSec){
           if(elapsedSec===1){
-						$("body").css("background", "linear-gradient(to bottom right, #00dbde, #fc00ff");
-						$("#start").css("background", "linear-gradient(to bottom right, #00dbde, #fc00ff");
+						$("body").css("background", timer.elementColor);
+						$(".rad-progress").css("color", timer.fgColor);
+						$(".btn-rect").css("background", timer.elementColor);						
+						$(".caption").css("color", timer.fgColor);
 					}
 					
-          if(elapsedSec===workSec){
-						 $("body").css("background", "linear-gradient(to bottom right, #FDFC47, #24FE41");
-						$("#start").css("background", "linear-gradient(to bottom right, #FDFC47, #24FE41");
-				}
+          if(elapsedSec===workSec+1){
+						$("body").css("background", timer.elementColor);
+						$(".rad-progress").css("color", timer.bgColor);
+						$(".btn-rect").css("background", timer.elementColor);
+						$(".caption").css("color", timer.bgColor);
+					}
         } else {
           //Need to clear setInterval so timer stops running at end of work and play
           clearInterval(clock);
 					$("#start").text("Start");
-          $("body").css("background", "linear-gradient(to bottom right, #7FDBFF, #0074D9");
-					$("#start").css("background", "linear-gradient(to bottom right, #7FDBFF, #0074D9");
+					$("body").css("background", timer.elementColor);
+					$(".rad-progress").css("color", timer.bgColor);
+					$(".btn-rect").css("background", timer.elementColor);
+					$(".caption").css("color", timer.fgColor);
 					
         }
 
