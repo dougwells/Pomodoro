@@ -1,8 +1,8 @@
 
 $( document ).ready(function() {
-	var work = 1;
-	var play = 1;
-	var time;
+	var work = 0.5;
+	var play = 0.5;
+	var time = 0.25;
 	$('#circle-1').circliful();
 	
 	// Set time for work //
@@ -126,7 +126,7 @@ function pomodoro (workMin, playMin){
           timer.percent = Math.floor(elapsedSec-workSec)/playSec*100;
           timer.bgColor = "#24FE41";
           timer.fgColor = "#FDFC47";
-          timer.elementColor = "linear-gradient(to bottom right, #24FE41, #FDFC47)";
+          timer.elementColor = "linear-gradient(to bottom right, #FDFC47, #24FE41)";
 
         //When work & play time are over, reset pomodoro
         }else {
@@ -157,17 +157,13 @@ function pomodoro (workMin, playMin){
       //Set HTML background color at start of work time, start of play & at end
         if(elapsedSec<endSec){
           if(elapsedSec===1){
-						$("body").css("background", timer.elementColor);
-						$(".rad-progress").css("color", timer.fgColor);
-						$(".btn-rect").css("background", timer.elementColor);						
-						$(".caption").css("color", timer.fgColor);
+						$("body, .btn-rect").css("background", timer.elementColor);
+						$(".rad-progress, .caption, .sub, .add, input").css({color: timer.fgColor});
 					}
 					
           if(elapsedSec===workSec+1){
-						$("body").css("background", timer.elementColor);
-						$(".rad-progress").css("color", timer.bgColor);
-						$(".btn-rect").css("background", timer.elementColor);
-						$(".caption").css("color", timer.bgColor);
+						$("body, .btn-rect").css("background", timer.elementColor);
+						$(".rad-progress, .caption, .sub, .add, input").css({color: timer.bgColor});
 					}
         } else {
           //Need to clear setInterval so timer stops running at end of work and play
@@ -176,7 +172,14 @@ function pomodoro (workMin, playMin){
 					$("body").css("background", timer.elementColor);
 					$(".rad-progress").css("color", timer.bgColor);
 					$(".btn-rect").css("background", timer.elementColor);
-					$(".caption").css("color", timer.fgColor);
+					$(".caption, .sub, .add, input").css("color", timer.fgColor);
+					$(".add, .sub").mouseenter(function() {
+  						$(this).css("color","white")
+						});
+					$(".add, .sub").mouseleave(function() {
+  						$(this).css("color","blue")
+						});
+
 					
         }
 
