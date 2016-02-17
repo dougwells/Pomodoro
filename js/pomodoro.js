@@ -1,7 +1,7 @@
 
 $( document ).ready(function() {
-	var work = 25;
-	var play = 5;
+	var work = 1;
+	var play = 1;
 	var time;
 	$('#circle-1').circliful();
 	
@@ -156,18 +156,28 @@ function pomodoro (workMin, playMin){
 
       //Set HTML background color at start of work time, start of play & at end
         if(elapsedSec<endSec){
-          if(elapsedSec===1){$("body").css("background", "linear-gradient(to bottom right, #00dbde, #fc00ff");}
-          if(elapsedSec===workSec){$("body").css("background", "linear-gradient(to bottom right, #FDFC47, #24FE41");}
+          if(elapsedSec===1){
+						$("body").css("background", "linear-gradient(to bottom right, #00dbde, #fc00ff");
+						$("#start").css("background", "linear-gradient(to bottom right, #00dbde, #fc00ff");
+					}
+					
+          if(elapsedSec===workSec){
+						 $("body").css("background", "linear-gradient(to bottom right, #FDFC47, #24FE41");
+						$("#start").css("background", "linear-gradient(to bottom right, #FDFC47, #24FE41");
+				}
         } else {
           //Need to clear setInterval so timer stops running at end of work and play
           clearInterval(clock);
+					$("#start").text("Start");
           $("body").css("background", "linear-gradient(to bottom right, #7FDBFF, #0074D9");
+					$("#start").css("background", "linear-gradient(to bottom right, #7FDBFF, #0074D9");
+					
         }
 
       //Update & redraw radial progress bar each second.  Search "github circliful" for more information
         $('#circle-1').empty().removeData().attr('data-part', timer.percent).circliful();
 
-  }, 1000);  //End "clock" & End setInterval
+  }, 100);  //End "clock" & End setInterval
 	
 
 
