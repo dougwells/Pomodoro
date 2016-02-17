@@ -160,7 +160,7 @@ function pomodoro (workMin, playMin){
 					$("#work input").val("work");
 					$("#play input").val("play")	
 					$("body, .btn-rect").css("background", timer.elementColor);
-					$(".rad-progress").css("color", timer.bgColor);
+					$(".rad-progress").css("color", timer.fgColor);
 					$(".caption, .sub, .add, input").css("color", timer.fgColor);
 						
 					$(".add, .sub").mouseenter(function() {
@@ -209,8 +209,9 @@ function pomodoro (workMin, playMin){
 						
 					}
         } else {
-          //Need to clear setInterval so timer stops running at end of work and play
+          //Clear setInterval so timer stops running at end of work and play
           clearInterval(clock);
+					//Reset look and feel of page elements
 					$("#work input").val("work");
 					$("#play input").val("play")
 					$("#start").text("Start");
