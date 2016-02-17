@@ -1,8 +1,8 @@
 
 $( document ).ready(function() {
-	var work = 0.5;
-	var play = 0.5;
-	var time = 0.25;
+	var work = 25;
+	var play = 5;
+
 	$('#circle-1').circliful();
 	
 	// Set time for work //
@@ -157,36 +157,91 @@ function pomodoro (workMin, playMin){
       //Set HTML background color at start of work time, start of play & at end
         if(elapsedSec<endSec){
           if(elapsedSec===1){
-						$("body, .btn-rect").css("background", timer.elementColor);
-						$(".rad-progress, .caption, .sub, .add, input").css({color: timer.fgColor});
+					$("#work input").val("work");
+					$("#play input").val("play")	
+					$("body, .btn-rect").css("background", timer.elementColor);
+					$(".rad-progress").css("color", timer.bgColor);
+					$(".caption, .sub, .add, input").css("color", timer.fgColor);
+						
+					$(".add, .sub").mouseenter(function() {
+  						$(this).css({
+								"color":"white",
+								"background": timer.fgColor
+							})
+						});
+					$(".add, .sub").mouseleave(function() {
+  						$(this).css({
+								"color":timer.fgColor,
+								"background": "#fff"
+							});
+						});
+					$(".btn-rect").mouseenter(function() {
+  						$(this).css("background",timer.fgColor)
+						});
+					$(".btn-rect").mouseleave(function() {
+						$(this).css("background", timer.elementColor)
+						});
 					}
 					
           if(elapsedSec===workSec+1){
+						$("#work input").val("work");
+						$("#play input").val("play")
 						$("body, .btn-rect").css("background", timer.elementColor);
 						$(".rad-progress, .caption, .sub, .add, input").css({color: timer.bgColor});
+						$(".add, .sub").mouseenter(function() {
+  						$(this).css({
+								"color":"#fff",
+								"background": timer.bgColor
+							})
+						});
+						$(".add, .sub").mouseleave(function() {
+								$(this).css({
+									"color":timer.bgColor,
+									"background":"#fff"
+								});
+							});
+						$(".btn-rect").mouseenter(function() {
+								$(this).css("background",timer.bgColor)
+							});
+						$(".btn-rect").mouseleave(function() {
+							$(this).css("background", timer.elementColor)
+							});
+						
 					}
         } else {
           //Need to clear setInterval so timer stops running at end of work and play
           clearInterval(clock);
+					$("#work input").val("work");
+					$("#play input").val("play")
 					$("#start").text("Start");
 					$("body").css("background", timer.elementColor);
 					$(".rad-progress").css("color", timer.bgColor);
 					$(".btn-rect").css("background", timer.elementColor);
 					$(".caption, .sub, .add, input").css("color", timer.fgColor);
 					$(".add, .sub").mouseenter(function() {
-  						$(this).css("color","white")
+  						$(this).css({
+								"color":"#fff",
+								"background": timer.fgColor
+							})
 						});
 					$(".add, .sub").mouseleave(function() {
-  						$(this).css("color","blue")
+  						$(this).css({
+								"color":timer.fgColor,
+								"background":"#fff"
+							});
 						});
-
-					
+					$(".btn-rect").mouseenter(function() {
+  						$(this).css("background",timer.fgColor)
+						});
+					$(".btn-rect").mouseleave(function() {
+  					$(this).css("background",timer.elementColor)
+						});
         }
 
       //Update & redraw radial progress bar each second.  Search "github circliful" for more information
         $('#circle-1').empty().removeData().attr('data-part', timer.percent).circliful();
 
-  }, 100);  //End "clock" & End setInterval
+  }, 1000);  //End "clock" & End setInterval
 	
 
 
