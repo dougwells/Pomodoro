@@ -1,7 +1,9 @@
-
 $( document ).ready(function() {
 	var work = 25;
 	var play = 5;
+	var simSpeed = 50;  //10=10x, 100 = 100x faster 
+  var wav = 'http://oringz.com/oringz-uploads/sounds-922-chimes.mp3';
+  var audio = new Audio(wav);
 
 	$('#circle-1').circliful();
 	
@@ -71,7 +73,7 @@ $( document ).ready(function() {
 	// When click "Start" or "Reset" button
 	$(".btn-rect").click(function(){		
 			//Run Pomodoro
-				pomodoro(work,play);
+				pomodoro(work,play,simSpeed);
 		
 			//reset button labels
 				$("#work input").val("work");
@@ -79,7 +81,7 @@ $( document ).ready(function() {
 				if($("#start").text()!=="Reset"){
 					 $("#start").text("Reset")
 					}else{
-						location.reload();
+					history.go(0);
 					}
 
 
@@ -94,7 +96,7 @@ $( document ).ready(function() {
 
 // Pomodoro Function
 
-function pomodoro (workMin, playMin){
+function pomodoro (workMin, playMin, speed){
 //variables set at start
   var workSec = workMin*60
   var playSec = playMin*60
@@ -184,6 +186,9 @@ function pomodoro (workMin, playMin){
 					}
 					
           if(elapsedSec===workSec+1){
+            //play alarm
+            audio.play();
+            //inputs for circliful
 						$("#work input").val("work");
 						$("#play input").val("play")
 						$("body, .btn-rect").css("background", timer.elementColor);
@@ -211,6 +216,10 @@ function pomodoro (workMin, playMin){
         } else {
           //Clear setInterval so timer stops running at end of work and play
           clearInterval(clock);
+          
+          //play alarm
+          audio.play();
+          
 					//Reset look and feel of page elements
 					$("#work input").val("work");
 					$("#play input").val("play")
@@ -242,7 +251,7 @@ function pomodoro (workMin, playMin){
       //Update & redraw radial progress bar each second.  Search "github circliful" for more information
         $('#circle-1').empty().removeData().attr('data-part', timer.percent).circliful();
 
-  }, 1000);  //End "clock" & End setInterval
+  }, 1000/speed);  //End "clock" & End setInterval
 	
 
 
